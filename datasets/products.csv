@@ -1,0 +1,6 @@
+product_id,product_name,category,price
+501,Pro Plan,Subscription,99.99
+502,Starter Plan,Subscription,49.50
+503,Free Plan,Subscription,0
+504,Add-on Feature A,Add-on,29.99
+505,One-time Credit,One-time,15.00

@@ -1,0 +1,9 @@
+session_id,user_id,step,timestamp
+s1,1,Visited Landing Page,2023-06-01 09:00
+s1,1,Started Signup,2023-06-01 09:02
+s1,1,Completed Signup,2023-06-01 09:05
+s2,2,Visited Landing Page,2023-06-01 10:00
+s2,2,Started Signup,2023-06-01 10:01
+s3,3,Visited Landing Page,2023-06-01 11:00
+s3,3,Started Signup,2023-06-01 11:02
+s3,3,Bounced,2023-06-01 11:03

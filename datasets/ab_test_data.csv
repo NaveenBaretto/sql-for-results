@@ -1,0 +1,9 @@
+user_id,test_group,viewed_product,clicked_buy,converted
+1,A,yes,yes,yes
+2,A,yes,no,no
+3,B,yes,yes,no
+4,B,yes,yes,yes
+5,A,no,no,no
+6,B,yes,no,no
+7,A,yes,yes,yes
+8,B,no,no,no
