@@ -1,0 +1,9 @@
+user_id,signup_date,region,status
+1,2023-01-15,North,active
+2,2023-02-20,West,active
+3,2023-03-05,South,inactive
+4,2023-04-10,East,active
+5,2023-05-18,North,inactive
+6,2023-06-01,South,active
+7,2023-06-15,West,active
+8,2023-07-01,East,inactive
