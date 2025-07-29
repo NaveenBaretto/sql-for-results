@@ -45,26 +45,17 @@ KPIs & business questions
 ⚙️ Environment Setup:
 
 To run these notebooks, install the required Python packages:
-
-bash
-Copy
-Edit
 pip install ipython-sql pandas sqlalchemy
-If you don’t have Jupyter installed:
 
-bash
-Copy
-Edit
+If you don’t have Jupyter installed:
 pip install notebook
 ────────────────────────────────────────────
 🚀 How to Use:
 
 Launch Jupyter:
-
-bash
-Copy
-Edit
 jupyter notebook
+
+────────────────────────────────────────────
 Run load_csvs_to_sqlite.ipynb
 → This loads all CSV files from the /datasets/ folder
 → Creates sample.db SQLite database with 5 tables
