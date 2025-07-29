@@ -1,9 +1,61 @@
-session_id,user_id,step,timestamp
-s1,1,Visited Landing Page,2023-06-01 09:00
-s1,1,Started Signup,2023-06-01 09:02
-s1,1,Completed Signup,2023-06-01 09:05
-s2,2,Visited Landing Page,2023-06-01 10:00
-s2,2,Started Signup,2023-06-01 10:01
-s3,3,Visited Landing Page,2023-06-01 11:00
-s3,3,Started Signup,2023-06-01 11:02
-s3,3,Bounced,2023-06-01 11:03
+user_id,step_name,step_timestamp
+18,view_product,2025-07-20 10:02
+18,add_to_cart,2025-07-20 10:05
+18,initiate_checkout,2025-07-20 10:05
+5,view_product,2025-07-20 10:03
+5,add_to_cart,2025-07-20 10:03
+5,initiate_checkout,2025-07-20 10:04
+3,view_product,2025-07-20 10:02
+3,add_to_cart,2025-07-20 10:04
+3,initiate_checkout,2025-07-20 10:06
+7,view_product,2025-07-20 10:04
+7,add_to_cart,2025-07-20 10:02
+7,initiate_checkout,2025-07-20 10:04
+7,complete_purchase,2025-07-20 10:06
+9,view_product,2025-07-20 10:03
+9,add_to_cart,2025-07-20 10:05
+9,initiate_checkout,2025-07-20 10:06
+11,view_product,2025-07-20 10:04
+11,add_to_cart,2025-07-20 10:04
+6,view_product,2025-07-20 10:02
+6,add_to_cart,2025-07-20 10:05
+6,initiate_checkout,2025-07-20 10:07
+7,view_product,2025-07-20 10:03
+7,add_to_cart,2025-07-20 10:04
+14,view_product,2025-07-20 10:03
+14,add_to_cart,2025-07-20 10:04
+14,initiate_checkout,2025-07-20 10:03
+19,view_product,2025-07-20 10:05
+19,add_to_cart,2025-07-20 10:03
+19,initiate_checkout,2025-07-20 10:04
+4,view_product,2025-07-20 10:02
+4,add_to_cart,2025-07-20 10:05
+4,initiate_checkout,2025-07-20 10:06
+4,complete_purchase,2025-07-20 10:04
+20,view_product,2025-07-20 10:05
+20,add_to_cart,2025-07-20 10:04
+20,initiate_checkout,2025-07-20 10:05
+11,view_product,2025-07-20 10:04
+11,add_to_cart,2025-07-20 10:05
+11,initiate_checkout,2025-07-20 10:07
+1,view_product,2025-07-20 10:04
+1,add_to_cart,2025-07-20 10:03
+1,initiate_checkout,2025-07-20 10:05
+2,view_product,2025-07-20 10:03
+2,add_to_cart,2025-07-20 10:06
+2,initiate_checkout,2025-07-20 10:07
+1,view_product,2025-07-20 10:04
+1,add_to_cart,2025-07-20 10:03
+1,initiate_checkout,2025-07-20 10:07
+16,view_product,2025-07-20 10:02
+16,add_to_cart,2025-07-20 10:04
+16,initiate_checkout,2025-07-20 10:06
+16,complete_purchase,2025-07-20 10:08
+13,view_product,2025-07-20 10:04
+13,add_to_cart,2025-07-20 10:04
+13,initiate_checkout,2025-07-20 10:05
+3,view_product,2025-07-20 10:02
+3,add_to_cart,2025-07-20 10:06
+12,view_product,2025-07-20 10:05
+12,add_to_cart,2025-07-20 10:05
+12,initiate_checkout,2025-07-20 10:06
