@@ -1,23 +1,26 @@
--- Metrics summary for dashboard
-SELECT 
-  COUNT(DISTINCT user_id) AS active_users,
-  SUM(revenue) AS total_revenue,
-  AVG(revenue) AS avg_revenue_per_user
+-- KPI: Total Revenue This Month
+SELECT SUM(amount) AS total_revenue
 FROM orders
-WHERE order_date >= CURRENT_DATE - INTERVAL '30 days';
+WHERE strftime('%Y-%m', order_date) = strftime('%Y-%m', 'now');
 
--- Region-wise revenue breakdown
-SELECT 
-  u.region,
-  SUM(o.revenue) AS region_revenue
+-- KPI: Conversion Funnel Drop-off
+SELECT step_name, COUNT(*) AS users_in_step
+FROM funnel_steps
+GROUP BY step_name
+ORDER BY step_timestamp;
+
+-- KPI: A/B Test Conversion Rate
+SELECT test_group,
+       COUNT(*) AS total_users,
+       SUM(CASE WHEN conversion = TRUE THEN 1 ELSE 0 END) AS converted,
+       ROUND(100.0 * SUM(CASE WHEN conversion = TRUE THEN 1 ELSE 0 END) / COUNT(*), 2) AS conversion_rate
+FROM ab_test_data
+GROUP BY test_group;
+
+-- KPI: Top-Selling Products
+SELECT p.product_name, SUM(o.quantity) AS total_sold
 FROM orders o
-JOIN users u ON o.user_id = u.id
-GROUP BY u.region;
-
--- Time series for daily revenue
-SELECT 
-  order_date,
-  SUM(revenue) AS daily_revenue
-FROM orders
-GROUP BY order_date
-ORDER BY order_date;
+JOIN products p ON o.product_id = p.product_id
+GROUP BY p.product_name
+ORDER BY total_sold DESC
+LIMIT 5;

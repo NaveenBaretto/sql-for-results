@@ -1,20 +1,19 @@
--- COUNT total users by region
-SELECT region, COUNT(*) AS user_count
+-- Count number of users per country
+SELECT country, COUNT(*) AS user_count
 FROM users
-GROUP BY region;
+GROUP BY country;
 
--- SUM revenue per user
-SELECT user_id, SUM(revenue) AS total_revenue
-FROM orders
-GROUP BY user_id;
+-- Total revenue by country
+SELECT u.country, SUM(o.amount) AS total_revenue
+FROM users u
+JOIN orders o ON u.user_id = o.user_id
+GROUP BY u.country;
 
--- Average product price by category
-SELECT category, AVG(price) AS avg_price
-FROM products
-GROUP BY category;
+-- Average order amount
+SELECT AVG(amount) AS avg_order_amount
+FROM orders;
 
--- HAVING to filter aggregated results
+-- Number of orders per user
 SELECT user_id, COUNT(*) AS order_count
 FROM orders
-GROUP BY user_id
-HAVING COUNT(*) > 3;
+GROUP BY user_id;

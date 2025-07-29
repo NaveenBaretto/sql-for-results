@@ -1,26 +1,20 @@
--- Calculate week-over-week growth using window functions
-SELECT 
-  user_id,
-  signup_date,
-  COUNT(*) OVER (PARTITION BY DATE_TRUNC('week', signup_date)) AS weekly_signups
-FROM users;
-
--- Funnel drop-off using CASE
-SELECT 
-  user_id,
-  MAX(CASE WHEN step = 'landing' THEN 1 ELSE 0 END) AS landed,
-  MAX(CASE WHEN step = 'signup' THEN 1 ELSE 0 END) AS signed_up,
-  MAX(CASE WHEN step = 'purchase' THEN 1 ELSE 0 END) AS purchased
-FROM funnel_steps
-GROUP BY user_id;
-
--- CASE to define custom buckets
-SELECT 
-  user_id,
-  revenue,
-  CASE 
-    WHEN revenue > 1000 THEN 'High Value'
-    WHEN revenue BETWEEN 500 AND 1000 THEN 'Mid Value'
-    ELSE 'Low Value'
-  END AS customer_segment
+-- Use window functions to rank users by their order amount
+SELECT user_id, order_id, amount,
+       RANK() OVER (PARTITION BY user_id ORDER BY amount DESC) AS rank_by_amount
 FROM orders;
+
+-- Calculate running total of revenue over time
+SELECT order_date, amount,
+       SUM(amount) OVER (ORDER BY order_date) AS running_total
+FROM orders;
+
+-- Segment users by total revenue
+SELECT u.user_id, u.name, SUM(o.amount) AS total_spent,
+       CASE
+           WHEN SUM(o.amount) > 500 THEN 'High Value'
+           WHEN SUM(o.amount) BETWEEN 200 AND 500 THEN 'Medium Value'
+           ELSE 'Low Value'
+       END AS segment
+FROM users u
+JOIN orders o ON u.user_id = o.user_id
+GROUP BY u.user_id, u.name;

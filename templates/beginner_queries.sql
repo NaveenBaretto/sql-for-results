@@ -1,19 +1,15 @@
--- SELECT specific columns from a table
-SELECT id, name, signup_date
-FROM users;
+-- Select all columns from the users table
+SELECT * FROM users;
 
--- Filter data using WHERE
-SELECT *
-FROM users
-WHERE region = 'South' AND status = 'active';
+-- Find users from India
+SELECT name, email FROM users
+WHERE country = 'India';
 
--- Simple INNER JOIN between users and orders
-SELECT u.id, u.name, o.order_id, o.revenue
+-- Get all orders placed after June 1, 2025
+SELECT * FROM orders
+WHERE order_date > '2025-06-01';
+
+-- Join users and orders to see who placed each order
+SELECT u.name, o.order_id, o.order_date, o.amount
 FROM users u
-JOIN orders o ON u.id = o.user_id;
-
--- Using ORDER BY and LIMIT
-SELECT *
-FROM products
-ORDER BY price DESC
-LIMIT 5;
+JOIN orders o ON u.user_id = o.user_id;
