@@ -4,41 +4,30 @@ This folder contains interactive Jupyter notebooks to help you practice and appl
 
 ────────────────────────────────────────────
 📂 Notebooks Included:
-
+────────────────────────────────────────────
 ✅ load_csvs_to_sqlite.ipynb
 
 Loads CSV files from /datasets/ into a local SQLite database (sample.db).
-
 Run this notebook first before running any SQL queries.
-
+────────────────────────────────────────────
 🧠 sql-learning.ipynb
 
 A guided SQL learning notebook covering:
 
 SELECT statements
-
 Filtering with WHERE
-
 Sorting and Aliasing
-
 Aggregations (GROUP BY, SUM, COUNT)
-
 JOIN operations
-
 Subqueries and CASE logic
+────────────────────────────────────────────
 
 📊 project_walkthroughs.ipynb
-
 Hands-on exercises and full solutions from book chapters, including:
-
 Segmentation & user profiling
-
 Funnel analysis
-
 Revenue analysis
-
 A/B testing
-
 KPIs & business questions
 
 ────────────────────────────────────────────
